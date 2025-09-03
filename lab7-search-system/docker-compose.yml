@@ -8,6 +8,7 @@ services:
       - "2181:2181"
     volumes:
       - ./app-data/zookeeper-data:/bitnami/zookeeper
+    user: root
     environment:
       - ALLOW_ANONYMOUS_LOGIN=yes
     networks:
@@ -20,6 +21,7 @@ services:
       - "9092:9092"
     volumes:
       - ./app-data/kafka-data:/bitnami/kafka
+    user: root
     environment:
       - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
       - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CLIENT:PLAINTEXT,EXTERNAL:PLAINTEXT
@@ -40,6 +42,7 @@ services:
       - "27017:27017"
     volumes:
       - ./app-data/mongo-data:/data/db
+    user: root
     environment:
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=root

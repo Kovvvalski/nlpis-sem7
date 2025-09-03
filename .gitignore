@@ -6,6 +6,8 @@
 ehthumbs.db
 Thumbs.db
 
+app-data
+
 .env
 .env.local
 .env.*
